@@ -17,7 +17,7 @@ const AboutMe = () => {
                 display: {xs: 'block', md: 'flex'}
             }}>
                 <Box sx={{width: {xs: '100%', md: '40%'}, pr: {xs: 0, md: 4}, pt: 4}}>
-                    <Typography variant='h4'>I'm Daylon Perez...</Typography>
+                    <Typography variant='h4'>I&apos;m Daylon Perez...</Typography>
                     <Typography sx={{mt: 2, mb: 3}} align='justify'>
                         Tengo un marcado interés por los temas de la condición humana y el
                         autoconocimiento, por lo que siento la necesidad de trabajar esos asuntos en mis

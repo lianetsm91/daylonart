@@ -21,7 +21,6 @@
 
 .image-banner-container {
     width: 100%;
-    height: 60vh;
     position: sticky;
     top: 64px;
     overflow: hidden;
@@ -37,5 +36,16 @@
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(18 18 18) 100%);
     z-index: 1;
     width: 100%;
-    height: 60vh;
+}
+
+@media only screen and (max-width: 899px) {
+    .image-banner-container, .image-banner-container::after {
+        height: 15vh;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .image-banner-container, .image-banner-container::after {
+        height: 60vh;
+    }
 }

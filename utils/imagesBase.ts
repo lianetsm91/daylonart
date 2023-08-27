@@ -1,8 +1,8 @@
 import { ImageBase } from '@/types/ImageBase';
 
 export const imagesBase: ImageBase = {
-  '1': {
-    'title': '1',
+  '18': {
+    'title': 'Anatomía del miedo',
     'dimensions': {
       'width': '80',
       'height': '80'
@@ -154,8 +154,8 @@ export const imagesBase: ImageBase = {
     'technic': 'Oleo over canvas',
     'sold': false
   },
-  '18': {
-    'title': 'Anatomía del miedo',
+  '1': {
+    'title': 'aaaa aaa',
     'dimensions': {
       'width': '90',
       'height': '100'

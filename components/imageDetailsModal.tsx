@@ -7,7 +7,7 @@ const style = {
     outline: 0,
     width: {xs: '100%', sm: '80%'},
     height: {xs: '100%', sm: '80%'},
-    bgcolor: '#3e4b46',
+    bgcolor: '#121212',
     boxShadow: 24,
     position: 'fixed',
     top: '50%',
@@ -27,10 +27,9 @@ const ImageDetailsModal: React.FC<Props> = ({openImage, handleOpenImage}) => {
                     open={openImage.open}
                     onClose={() => handleOpenImage(false, '', '')}
                     aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Box sx={{position: 'relative', height: '60px', width: '100%', bgcolor: '#121212', mb: 2}}>
+                    <Box sx={{position: 'relative', height: '60px', width: '100%', bgcolor: '#121212'}}>
                         <Typography variant="button" display="block" sx={{
                             color: 'white', position: 'absolute',
                             top: '50%',
@@ -50,7 +49,7 @@ const ImageDetailsModal: React.FC<Props> = ({openImage, handleOpenImage}) => {
                                }}
                                onClick={() => handleOpenImage(false, '', '')}/>
                     </Box>
-                    <Box sx={{position: 'relative', height: '75%', width: '100%'}}>
+                    <Box sx={{position: 'relative', height: '90%', width: '100%'}}>
                         <Image
                                 src={openImage.imageUrl}
                                 style={{objectFit: "contain"}}
@@ -58,16 +57,6 @@ const ImageDetailsModal: React.FC<Props> = ({openImage, handleOpenImage}) => {
                                 alt={openImage.title}
                         />
                     </Box>
-                    <Typography id="modal-modal-description"
-                                sx={{m: 2, color: 'white', height: 'calc(25% - 104px)', overflowX: 'auto'}}>
-                        Duis mollis, est non commodo luctus, ni si erat porttitor ligula. Duis mollis, est non commodo
-                        luctus, ni si erat porttitor ligula. Duis mollis, est non commodo luctus, ni si erat porttitor
-                        ligula. Duis mollis, est non commodo, ni si erat porttitor ligula. Duis mollis, est non commodo
-                        luctus, ni si erat porttitor
-                        ligula. Duis mollis, est non commodo luctus, ni si erat porttitor ligula. dfdvsiuhadv adsiuu
-                        adfvjdiu fvdfuih hdfiufhvois iuefio dfhvdkf iudf viduf dsiulfh fduihdfiufhvois iuuhdfiuhdifuv
-                        degfrdfg
-                    </Typography>
                 </Box>
             </Modal>
     );

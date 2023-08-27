@@ -1,0 +1,14 @@
+.pictureCardContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.pictureCardContainer:not(:last-child) {
+    margin-right: 10px;
+}
+
+.imageContainer {
+    height: 300px;
+    position: relative;
+    flex: auto;
+}

@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {AppBar, Box, Button, SwipeableDrawer, Toolbar, Typography} from '@mui/material'
 import Link from 'next/link';
 import {Menu} from '@mui/icons-material';
+import Logo from "@/components/logo";
+import './navBar.css'
 
 const navBarStyles = {
     padding: "0 16px",
@@ -52,44 +54,36 @@ const NavBar = () => {
                         </SwipeableDrawer>
                     </Box>
 
-                    <Typography
-                            variant="h5"
-                            noWrap
-                            component="a"
-                            href="/"
+                    <Box
                             sx={{
-                                display: {xs: 'flex', md: 'none'},
-                                flexGrow: 1,
-                                justifyContent: 'center',
+                                p: 1,
+                                cursor: 'pointer',
+                                height: '100%',
+                                display: 'flex',
+                                flexGrow: {xs: 1, md: 0},
+                                justifyContent: {xs: 'center', md: 'start'}
+                            }}
+                    >
+                        <Link href="/" className='logo'>
+                            <Logo/>
+                        </Link>
+
+                        <Typography
+                            variant="body1"
+                            sx={{
+                                ml: 1,
                                 fontFamily: 'monospace',
                                 fontWeight: 700,
                                 letterSpacing: '.3rem',
                                 color: 'inherit',
-                                textDecoration: 'none',
+                                textDecoration: 'none'
                             }}
-                    >
-                        LOGO Mobile
-                    </Typography>
-
-                    <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="/"
-                            sx={{
-                                mr: 2,
-                                flexGrow: 0,
-                                display: {xs: 'none', md: 'flex'},
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                letterSpacing: '.3rem',
-                                color: 'inherit',
-                                textDecoration: 'none',
-                            }}
-                    >
-                        LOGO Desktop
-                    </Typography>
-
+                        >
+                            <Link href="/">
+                                DAYLON<br/> &nbsp;ART
+                            </Link>
+                        </Typography>
+                    </Box>
                     <Box sx={{
                         display: {xs: 'none', md: 'flex'},
                         flexGrow: 1,

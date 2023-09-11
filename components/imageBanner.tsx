@@ -5,7 +5,6 @@ import Image from "next/image";
 import './imageBanner.css'
 
 const ImageBanner = () => {
-
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
@@ -21,6 +20,7 @@ const ImageBanner = () => {
 
         const elementTop = imageList[0]?.getBoundingClientRect()?.top;
 
+        //todo refactor and remove extra lines
         if (elementTop < 400 && elementTop > 250) {
             bannerImage[0].classList.add('transition1');
             bannerImage[0].classList.remove('transition2');

@@ -1,47 +1,49 @@
 import React from 'react';
 import {Box, Typography} from "@/lib/mui";
-import './aboutMe.css'
+import styles from "./aboutMe.module.css";
 
-const AboutMe = () => {
-    return (
-            <Box sx={{
-                width: '100%',
-                maxWidth: '1366px',
-                mx: 'auto',
-                overflow: 'hidden',
-                position: 'relative',
-                zIndex: 1,
-                color: 'white',
-                px: '1rem',
-                height: {xs: '100%', md: '100vh'},
-                display: {xs: 'block', md: 'flex'}
-            }}>
-                <Box sx={{width: {xs: '100%', md: '40%'}, pr: {xs: 0, md: 4}, pt: 4}}>
-                    <Typography variant='h4'>I&apos;m Daylon Perez...</Typography>
-                    <Typography sx={{mt: 2, mb: 3}} align='justify'>
-                        Tengo un marcado interés por los temas de la condición humana y el
-                        autoconocimiento, por lo que siento la necesidad de trabajar esos asuntos en mis
-                        prácticas artísticas.
-                        Propongo revelar de forma gráfica un sentimiento o situación en la que nos podamos
-                        encontrar, algo que vaya más allá de una mirada o expresión, algo más difícil de
-                        captar, como el temor al vacío o la anatomía del miedo, sin dejar que los estereotipos
-                        implantados por nosotros mismos influyan en lo que vemos.
-                        Siempre he trabajado con personajes ya que me permiten algo de flexibilidad a la
-                        hora de desarrollar mi proceso creativo, de esta manera alcanzo un mayor
-                        dramatismo en mis composiciones.
-                        Todo surge de la necesidad de expresar mis temores e inseguridades. En los
-                        momentos más difíciles lo utilizo con fines terapéuticos, algo así como una válvula
-                        de escape, liberándome por completo de toda esa carga de pensamientos.
-                    </Typography>
-                </Box>
-                <Box sx={{width: {xs: '100%', md: '60%'}, overflow: 'hidden'}}>
-                    <img src="/daylon.webp"
-                         alt="daylon-image"
-                         className='about-me-image'
-                    />
-                </Box>
-            </Box>
-    );
-};
+const AboutMe = () => (
+    <Box
+        className={styles.aboutMeContainer}
+        sx={{
+            '--height': {xs: '100%', md: '100vh'},
+            '--display': {xs: 'block', md: 'flex'}
+        }}
+    >
+        <Box
+            className={styles.aboutMeTextContainer}
+            sx={{
+                '--width': {xs: '100%', md: '40%'},
+                '--pt': {xs: '2rem%', md: '5rem'},
+                '--pr': {xs: 0, md: '2rem'}
+            }}
+        >
+            <Typography variant='h4'>About Daylon Perez</Typography>
+            <Typography
+                className={styles.aboutMeText}
+                align='justify'
+            >
+                Daylon Pérez PachecoI&apos;s art focuses on the exploration of the human condition and self-knowledge.
+                Its main objective is to graphically represent common emotions and situations of our species,
+                revealing hidden feelings and avoiding preconceived stereotypes.<br/><br/>
+                To add drama to his work, he chooses to work with characters, as it allows him greater flexibility
+                when developing his creative process. In this way, he can effectively represent the topics that
+                interest him, conveying a deeper message.<br/><br/>
+                His work is distinguished by its ability to capture the human essence and represent it authentically,
+                giving us room for reflection and challenging our perceptions.
+                to reflect.
+            </Typography>
+        </Box>
+        <Box
+            className={styles.aboutMeImageContainer}
+            sx={{'--width': {xs: '100%', md: '60%'}}}
+        >
+            <img src="/daylon.webp"
+                 alt="daylon-image"
+                 className={styles.aboutMeImage}
+            />
+        </Box>
+    </Box>
+);
 
 export default AboutMe;

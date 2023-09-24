@@ -1,0 +1,42 @@
+.aboutMeContainer {
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 0 1rem;
+    height: var(--height);
+    display: var(--display);
+}
+
+.aboutMeTextContainer {
+    width: var(--width);
+    padding: var(--pt) var(--pr) 0 0;
+    overflow-y: auto;
+}
+
+.aboutMeText {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.aboutMeImageContainer {
+    width: var(--width);
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 899px) {
+    .aboutMeImage {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .aboutMeImage {
+        width: auto;
+        height: 100%;
+    }
+}

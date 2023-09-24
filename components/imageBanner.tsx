@@ -14,7 +14,7 @@ const ImageBanner = () => {
     }, []);
 
     const handleScroll = () => {
-        const imageList = document.querySelectorAll('.image-list');
+        const imageList = document.querySelectorAll('#image-list-container');
         const bannerImage = document.querySelectorAll('.banner-image');
         const bannerImageContainer = document.querySelectorAll('.image-banner-container');
 

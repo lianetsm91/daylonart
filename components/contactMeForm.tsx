@@ -1,8 +1,10 @@
+'use client';
 import React, {useState} from 'react';
 import {Box, Send, Snackbar, TextField} from "@/lib/mui";
 import MuiAlert, {AlertProps} from '@mui/material/Alert';
 import LoadingButton from "@mui/lab/LoadingButton";
 import {invalidEmail, maxLength, noSpecialCharacters} from "@/utils/formValidations";
+import styles from "./contactMeForm.module.css";
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
         props,
@@ -115,10 +117,10 @@ const ContactMeForm = () => {
 
     const handleCloseSnackBar = (event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') return;
-
         setSnackBar({open: false, severity: '', message: ''});
     };
 
+    //todo create a component text field to avoid repetition of code
     return (
             <Box
                     component="form"
@@ -167,10 +169,10 @@ const ContactMeForm = () => {
                         onBlur={() => onBlur('message')}
                 />
                 <LoadingButton
+                    className={styles.contactMeFormLoadingButton}
                         variant="contained"
                         color='secondary'
                         size="large"
-                        sx={{mt: 2}}
                         type="submit"
                         disabled={disableButton}
                         loading={sending}
@@ -188,7 +190,8 @@ const ContactMeForm = () => {
                     <Alert
                             onClose={handleCloseSnackBar}
                             severity={snackBar.severity === "success" ? "success" : snackBar.severity === "error" ? "error" : undefined}
-                            sx={{width: '100%'}}>
+                            className={styles.contactMeSnackbar}
+                    >
                         {snackBar.message}
                     </Alert>
                 </Snackbar>

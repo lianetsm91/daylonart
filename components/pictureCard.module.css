@@ -1,0 +1,21 @@
+.pictureCardImageListItem {
+    cursor: pointer;
+    box-shadow: 0 0 20px black;
+}
+
+.pictureCardSubtitleContainer {
+    display: flex;
+}
+
+.pictureCardSubtitleLeft {
+    flex-grow: 1
+}
+
+.pictureCardSubtitleSold {
+    flex-grow: 0;
+    margin: 1rem;
+    background-color: red;
+    border-radius: 50px;
+    width: 15px;
+    height: 15px;
+}

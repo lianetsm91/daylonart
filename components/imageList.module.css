@@ -1,0 +1,11 @@
+.imageListContainer {
+    max-width: 1366px;
+    margin: -3rem auto 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.imageListImages {
+    padding: 0 1rem;
+}

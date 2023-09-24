@@ -1,9 +1,7 @@
 import React from 'react';
 // import Image from 'next/image';
 import {Box, ImageListItem, ImageListItemBar, Tooltip, Typography} from '../lib/mui';
-import "./pictureCard.css";
-
-// import styles from "@/styles/pictureCard.module.css";
+import styles from "./pictureCard.module.css";
 
 interface Props {
     title: string;
@@ -28,22 +26,26 @@ const PictureCard: React.FC<Props> = (
     };
 
     const subtitle = (
-            <Box sx={{display: 'flex'}}>
-                <Box sx={{flexGrow: 1}}>
+        <Box className={styles.pictureCardSubtitleContainer}>
+            <Box className={styles.pictureCardSubtitleLeft}>
                     <Typography
                             variant={"subtitle1"}>Dimensions: {`${dimensions.width} x ${dimensions.height}`}</Typography>
                     <Typography variant={"subtitle1"}>Technic: {technic}</Typography>
                 </Box>
                 {sold &&
                         <Tooltip title="Sold" placement="top">
-                            <Box sx={{flexGrow: 0, m: 2, bgcolor: 'red', borderRadius: 50, width: 15, height: 15}}/>
+                            <Box className={styles.pictureCardSubtitleSold}/>
                         </Tooltip>
                 }
             </Box>
     );
 
     return (
-            <ImageListItem key={imageUrl} onClick={() => handleOpen(imageUrl, title)} className='image-list-item'>
+        <ImageListItem
+            key={imageUrl}
+            onClick={() => handleOpen(imageUrl, title)}
+            className={styles.pictureCardImageListItem}
+        >
                 {/*<Image*/}
                 {/*        src={`${imageUrl}?w=248&fit=crop&auto=format`}*/}
                 {/*        style={{objectFit: "contain"}}*/}

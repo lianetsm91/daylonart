@@ -1,6 +1,5 @@
 import React from 'react';
 import {Facebook, IconButton, Instagram, LinkedIn, WhatsApp} from "@/lib/mui";
-import Link from "next/link";
 
 interface Props {
     type: string;

@@ -1,8 +1,0 @@
-.imagesGrid {
-    align-items: center;
-    justify-content: flex-start;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    width: 100%;
-}

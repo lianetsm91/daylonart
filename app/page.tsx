@@ -4,6 +4,7 @@ import React from 'react';
 import ImageBanner from '@/components/imageBanner';
 import {Box} from '@/lib/mui';
 import Images from '@/components/imageList';
+import styles from './home.module.css';
 
 const postsDirectory = path.join(process.cwd(), 'public/images');
 export const metadata = {
@@ -11,15 +12,15 @@ export const metadata = {
     description: "Daylon's Art Portfolio"
 };
 
-const ArtPage = () => {
+const Home = () => {
     const fileNames: string[] = fs.readdirSync(postsDirectory);
 
     return (
-            <Box sx={{width: '100%', height: '100%', pb: 3}}>
+        <Box className={styles.homePageContainer}>
                 <ImageBanner/>
                 <Images fileNames={fileNames}/>
             </Box>
     );
 };
 
-export default ArtPage;
+export default Home;

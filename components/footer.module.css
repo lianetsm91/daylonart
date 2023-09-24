@@ -1,0 +1,18 @@
+.footerContainer {
+    background-color: var(--color);
+}
+
+.footerSubcontainer {
+    max-width: 1366px;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerLink {
+    color: white;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+}

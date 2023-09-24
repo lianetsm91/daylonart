@@ -1,0 +1,31 @@
+.contactMeContainer {
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: var(--pt) 1rem 1rem;
+}
+
+.contactMeTitle {
+    margin: 1rem 0;
+}
+
+.contactMeSubtitle {
+    margin: 1rem 0 1.5rem;
+}
+
+.contactMeContent {
+    display: var(--display);
+}
+
+.contactMeSocialMediaSection {
+    display: flex;
+    flex-direction: var(--flexDirection);
+    align-items: center;
+    justify-content: var(--justifyContent);
+    padding: var(--py) 0;
+    width: var(--width);
+}

@@ -1,6 +1,7 @@
 .pictureCardImageListItem {
     cursor: pointer;
     box-shadow: 0 0 20px black;
+    position: relative;
 }
 
 .pictureCardSubtitleContainer {
@@ -18,4 +19,15 @@
     border-radius: 50px;
     width: 15px;
     height: 15px;
+}
+
+.pictureCardFooter {
+    padding: 12px 16px;
+    color: white;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }

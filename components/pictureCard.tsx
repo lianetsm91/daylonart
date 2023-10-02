@@ -1,7 +1,7 @@
 import React from 'react';
-// import Image from 'next/image';
-import {Box, ImageListItem, ImageListItemBar, Tooltip, Typography} from '../lib/mui';
+import {Box, Stack, Tooltip, Typography} from '../lib/mui';
 import styles from "./pictureCard.module.css";
+import Image from "next/image";
 
 interface Props {
     title: string;
@@ -29,7 +29,8 @@ const PictureCard: React.FC<Props> = (
         <Box className={styles.pictureCardSubtitleContainer}>
             <Box className={styles.pictureCardSubtitleLeft}>
                     <Typography
-                            variant={"subtitle1"}>Dimensions: {`${dimensions.width} x ${dimensions.height}`}</Typography>
+                        variant={"subtitle1"}>Dimensions: {`${dimensions.width} x ${dimensions.height}`}
+                    </Typography>
                     <Typography variant={"subtitle1"}>Technic: {technic}</Typography>
                 </Box>
                 {sold &&
@@ -41,29 +42,33 @@ const PictureCard: React.FC<Props> = (
     );
 
     return (
-        <ImageListItem
+        <Stack
             key={imageUrl}
             onClick={() => handleOpen(imageUrl, title)}
             className={styles.pictureCardImageListItem}
         >
-                {/*<Image*/}
-                {/*        src={`${imageUrl}?w=248&fit=crop&auto=format`}*/}
-                {/*        style={{objectFit: "contain"}}*/}
-                {/*        // width={248}*/}
-                {/*        // height={248}*/}
-                {/*        // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"*/}
-                {/*        fill*/}
-                {/*        alt={title}*/}
-                {/*/>*/}
-                <img
-                        src={`${imageUrl}?w=248&fit=crop&auto=format`}
-                        srcSet={`${imageUrl}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                        alt={title}
-                        loading="lazy"
-                />
-                <ImageListItemBar title={title} subtitle={subtitle}/>
+            {/*<Box sx={{position: "relative"}}>*/}
+            {/*    <Image*/}
+            {/*        src={`${imageUrl}?w=248&fit=crop&auto=format`}*/}
+            {/*        style={{objectFit: "contain"}}*/}
+            {/*        // width={248}*/}
+            {/*        // height={248}*/}
+            {/*        // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"*/}
+            {/*        fill*/}
+            {/*        alt={title}*/}
+            {/*    />*/}
+            {/*</Box>*/}
+            <img
+                src={`${imageUrl}?w=248&fit=crop&auto=format`}
+                srcSet={`${imageUrl}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={title}
+            />
+            <Box className={styles.pictureCardFooter}>
+                <Typography variant={"subtitle1"}>{title}</Typography>
+                {subtitle}
+            </Box>
                 {/*<ImageListItemBar title={title} subtitle={`${dimensions.width} X ${dimensions.height}`}/>*/}
-            </ImageListItem>
+        </Stack>
             // <div className={styles.pictureCardContainer}>
             //     <div className={styles.imageContainer}>
             //         <Image

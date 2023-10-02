@@ -1,166 +1,337 @@
-import { ImageBase } from '@/types/ImageBase';
+import {ImageBase} from '@/types/ImageBase';
 
 export const imagesBase: ImageBase = {
-  '18': {
+  'a1': {
     'title': 'Anatomía del miedo',
     'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': '100 cm',
+      'height': '90 cm'
     },
     'technic': 'Oleo over canvas',
     'sold': false
   },
-  '2': {
-    'title': '2',
+  'a2': {
+    'title': 'Presagio',
     'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': '90 cm',
+      'height': '100 cm'
     },
     'technic': 'Oleo over canvas',
     'sold': true
   },
-  '3': {
-    'title': '3',
+  'a3': {
+    'title': 'Riña entre pétalos',
     'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': 'cm',
+      'height': 'cm'
     },
     'technic': 'Oleo over canvas',
     'sold': false
   },
-  '4': {
-    'title': '4',
+  'a4': {
+    'title': '',
     'dimensions': {
-      'width': '80',
-      'height': '80'
-    },
-    'technic': 'Oleo over canvas',
-    'sold': false
-  },
-  '5': {
-    'title': '5',
-    'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': '60 cm',
+      'height': '80 cm'
     },
     'technic': 'Oleo over canvas',
     'sold': true
   },
-  '6': {
-    'title': '6',
+  'a5': {
+    'title': 'Temor al vacío',
     'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': '100 cm',
+      'height': '90 cm'
     },
     'technic': 'Oleo over canvas',
     'sold': false
   },
-  '7': {
-    'title': '7',
+  'a6': {
+    'title': 'Pétalo de Narciso',
     'dimensions': {
-      'width': '80',
-      'height': '80'
-    },
-    'technic': 'Oleo over canvas',
-    'sold': false
-  },
-  '8': {
-    'title': '8',
-    'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': '130 cm',
+      'height': '80 cm'
     },
     'technic': 'Oleo over canvas',
     'sold': true
   },
-  '9': {
-    'title': '9',
+  'a7': {
+    'title': 'Amor eclipsante',
     'dimensions': {
-      'width': '80',
-      'height': '80'
-    },
-    'technic': 'Oleo over canvas',
-    'sold': false
-  },
-  '10': {
-    'title': '10',
-    'dimensions': {
-      'width': '80',
-      'height': '80'
-    },
-    'technic': 'Oleo over canvas',
-    'sold': false
-  },
-  '11': {
-    'title': '11',
-    'dimensions': {
-      'width': '80',
-      'height': '80'
-    },
-    'technic': 'Oleo over canvas',
-    'sold': false
-  },
-  '12': {
-    'title': '12',
-    'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': '100 cm',
+      'height': '120 cm'
     },
     'technic': 'Oleo over canvas',
     'sold': true
   },
-  '13': {
-    'title': '13',
+  'a8': {
+    'title': 'Víctimas de un mismo ser',
     'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': '80 cm',
+      'height': '90 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'a9': {
+    'title': 'Banco de la costumbre',
+    'dimensions': {
+      'width': ' cm',
+      'height': ' cm'
     },
     'technic': 'Oleo over canvas',
     'sold': false
   },
-  '14': {
-    'title': '14',
+  'b10': {
+    'title': 'Gratitud',
     'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': ' cm',
+      'height': ' cm'
     },
     'technic': 'Oleo over canvas',
     'sold': false
   },
-  '15': {
-    'title': 'Rasca cielos original',
+  'b11': {
+    'title': '',
     'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': '305 cm',
+      'height': '153 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'b12': {
+    'title': 'Metamorfosis',
+    'dimensions': {
+      'width': '60 cm',
+      'height': '80 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'b13': {
+    'title': 'Apego',
+    'dimensions': {
+      'width': '100 cm',
+      'height': '120 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'b14': {
+    'title': 'Las musas de Safo',
+    'dimensions': {
+      'width': '120 cm',
+      'height': '100 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'b15': {
+    'title': 'Bolondrón',
+    'dimensions': {
+      'width': '120 cm',
+      'height': '100 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'b16': {
+    'title': 'Yemayá',
+    'dimensions': {
+      'width': '60 cm',
+      'height': '80 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'b17': {
+    'title': 'Relativa identidad',
+    'dimensions': {
+      'width': '100 cm',
+      'height': '120 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'b18': {
+    'title': 'Criterio de belleza',
+    'dimensions': {
+      'width': '120 cm',
+      'height': '100 cm'
     },
     'technic': 'Oleo over canvas',
     'sold': false
   },
-  '16': {
-    'title': '16',
+  'b19': {
+    'title': 'Alopecia del corazón',
     'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': '40 cm',
+      'height': '75 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'c20': {
+    'title': 'Destellos de ansiedad',
+    'dimensions': {
+      'width': '100 cm',
+      'height': '120 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'c21': {
+    'title': 'Quinceañera',
+    'dimensions': {
+      'width': '60 cm',
+      'height': '80 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'c22': {
+    'title': 'Reguero',
+    'dimensions': {
+      'width': '120 cm',
+      'height': '100 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'c23': {
+    'title': 'Laberintos de la edad',
+    'dimensions': {
+      'width': '80 cm',
+      'height': '130 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'c24': {
+    'title': '',
+    'dimensions': {
+      'width': '100 cm',
+      'height': '120 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'c25': {
+    'title': 'Elegguá',
+    'dimensions': {
+      'width': '90 cm',
+      'height': '100 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'c26': {
+    'title': 'Thriller',
+    'dimensions': {
+      'width': '100 cm',
+      'height': '90 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'c27': {
+    'title': 'Vista gorda',
+    'dimensions': {
+      'width': 'cm',
+      'height': 'cm'
     },
     'technic': 'Oleo over canvas',
     'sold': false
   },
-  '17': {
-    'title': '17',
+  'c28': {
+    'title': 'Time with myself',
     'dimensions': {
-      'width': '80',
-      'height': '80'
+      'width': 'cm',
+      'height': 'cm'
     },
     'technic': 'Oleo over canvas',
     'sold': false
   },
-  '1': {
-    'title': 'aaaa aaa',
+  'c29': {
+    'title': '',
     'dimensions': {
-      'width': '90',
-      'height': '100'
+      'width': 'cm',
+      'height': 'cm'
     },
     'technic': 'Oleo over canvas',
     'sold': false
+  },
+  'd30': {
+    'title': 'Cualtería',
+    'dimensions': {
+      'width': '60 cm',
+      'height': '80 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'd31': {
+    'title': 'Geografía de la fe',
+    'dimensions': {
+      'width': '80 cm',
+      'height': '130 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'd32': {
+    'title': 'El abrazo',
+    'dimensions': {
+      'width': '80 cm',
+      'height': '120 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'd33': {
+    'title': '',
+    'dimensions': {
+      'width': '60 cm',
+      'height': '80 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'd34': {
+    'title': 'Homenaje a la soledad',
+    'dimensions': {
+      'width': '80 cm',
+      'height': '130 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'd35': {
+    'title': '',
+    'dimensions': {
+      'width': '120 cm',
+      'height': '100 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'd36': {
+    'title': 'Rumbo a permanecer',
+    'dimensions': {
+      'width': '90 cm',
+      'height': '100 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
+  },
+  'd37': {
+    'title': 'Geografía de la fe',
+    'dimensions': {
+      'width': '80 cm',
+      'height': '100 cm'
+    },
+    'technic': 'Oleo over canvas',
+    'sold': true
   }
 };

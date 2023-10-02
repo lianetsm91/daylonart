@@ -1,6 +1,7 @@
 'use client';
 import React, {useState} from 'react';
-import {Box, ImageList, useMediaQuery, useTheme} from '../lib/mui';
+import {Box} from '../lib/mui';
+import Masonry from '@mui/lab/Masonry';
 import {imagesBase} from "@/utils/imagesBase";
 import PictureCard from "@/components/pictureCard";
 import ImageDetailsModal from "@/components/imageDetailsModal";
@@ -12,9 +13,6 @@ interface Props {
 
 const Images: React.FC<Props> = ({fileNames}) => {
     const [openImage, setOpenImage] = useState({open: false, imageUrl: '', title: ''});
-    const theme = useTheme()
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-    const isTablet = useMediaQuery(theme.breakpoints.down('md'))
 
     const handleOpenImage = (open: boolean, imageUrl: string, title: string) => {
         setOpenImage({open, imageUrl, title});
@@ -27,10 +25,10 @@ const Images: React.FC<Props> = ({fileNames}) => {
                     className={styles.imageListContainer}
                     id='image-list-container'
                 >
-                    <ImageList
+                    <Masonry
                         className={styles.imageListImages}
-                        variant="masonry"
-                        gap={30} cols={isMobile ? 1 : (isTablet ? 2 : 3)}
+                        columns={{xs: 1, sm: 2, md: 3}}
+                        spacing={3}
                     >
                         {fileNames.map((fileName) => {
                             const imageName = fileName.split('.')[0];
@@ -48,7 +46,7 @@ const Images: React.FC<Props> = ({fileNames}) => {
                             }
                             return null;
                         })}
-                    </ImageList>
+                    </Masonry>
                 </Box>
             </>
     );

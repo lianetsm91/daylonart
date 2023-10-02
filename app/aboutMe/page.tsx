@@ -23,7 +23,7 @@ const AboutMe = () => (
                 className={styles.aboutMeText}
                 align='justify'
             >
-                Daylon Pérez PachecoI&apos;s art focuses on the exploration of the human condition and self-knowledge.
+                Daylon Pérez Pacheco&apos;s art focuses on the exploration of the human condition and self-knowledge.
                 Its main objective is to graphically represent common emotions and situations of our species,
                 revealing hidden feelings and avoiding preconceived stereotypes.<br/><br/>
                 To add drama to his work, he chooses to work with characters, as it allows him greater flexibility

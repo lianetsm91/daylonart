@@ -44,6 +44,7 @@ export function Images({ fileNames }: Props) {
                 <PictureCard
                   w={w}
                   h={h}
+                  eager={imagesBase[imageName].eager}
                   key={fileName}
                   title={imagesBase[imageName].title}
                   sold={imagesBase[imageName].sold}

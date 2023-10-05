@@ -7,6 +7,7 @@ export type TImageBase = {
       width: string;
       height: string;
     };
+    eager?: boolean;
     technic: string;
     sold: boolean;
   };

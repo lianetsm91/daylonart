@@ -14,6 +14,7 @@ type Props = TImageSize & {
   imageUrl: string;
   sold: boolean;
   handleOpenImage: any;
+  eager?: boolean;
 };
 
 const IMAGE_CONTAINER_SX: SxProps = {
@@ -25,7 +26,7 @@ const IMAGE_CONTAINER_SX: SxProps = {
   }
 };
 
-function PictureCard({ title, dimensions, technic, imageUrl, sold, handleOpenImage, w, h }: Props) {
+function PictureCard({ title, dimensions, technic, imageUrl, sold, handleOpenImage, w, h, eager }: Props) {
   const handleOpen = () => {
     handleOpenImage(true, imageUrl, title);
   };
@@ -60,6 +61,7 @@ function PictureCard({ title, dimensions, technic, imageUrl, sold, handleOpenIma
         height={h}
         width={w}
         style={{ objectFit: 'contain' }}
+        loading={eager ? 'eager' : 'lazy'}
       />
       <Box className={styles.pictureCardFooter}>
         <Typography variant={'subtitle1'}>{title}</Typography>

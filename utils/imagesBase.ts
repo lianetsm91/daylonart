@@ -9,6 +9,7 @@ export const imagesBase: TImageBase = {
     },
     w: 2865,
     h: 2574,
+    eager: true,
     technic: 'Oleo over canvas',
     sold: false
   },
@@ -20,6 +21,7 @@ export const imagesBase: TImageBase = {
     },
     w: 2572,
     h: 3114,
+    eager: true,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -31,6 +33,7 @@ export const imagesBase: TImageBase = {
     },
     w: 2388,
     h: 3442,
+    eager: true,
     technic: 'Oleo over canvas',
     sold: false
   },
@@ -42,6 +45,7 @@ export const imagesBase: TImageBase = {
     },
     w: 954,
     h: 1171,
+    eager: true,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -53,6 +57,7 @@ export const imagesBase: TImageBase = {
     },
     w: 2865,
     h: 2585,
+    eager: true,
     technic: 'Oleo over canvas',
     sold: false
   },
@@ -64,6 +69,7 @@ export const imagesBase: TImageBase = {
     },
     w: 3357,
     h: 1809,
+    eager: true,
     technic: 'Oleo over canvas',
     sold: true
   },

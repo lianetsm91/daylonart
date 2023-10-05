@@ -1,9 +1,11 @@
-import {Box, Typography} from '@/lib/mui';
-import React from "react";
-import Image from "next/image";
+import Image from 'next/image';
+import { Box } from '@ui/Box';
+import { Typography } from '@ui/Typography';
 
 export default function Custom404() {
-    return <Box sx={{
+  return (
+    <Box
+      sx={{
         width: '100%',
         maxWidth: '1366px',
         mx: 'auto',
@@ -16,13 +18,12 @@ export default function Custom404() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center'
-    }}>
-        <Typography variant='h4' sx={{my: 8, textAlign: 'center'}}>Sorry, this page does not exists</Typography>
-        <Image
-            src="/not-found.png"
-            width={500}
-            height={500}
-            alt="not-found"
-        />
+      }}
+    >
+      <Typography variant="h4" sx={{ my: 8, textAlign: 'center' }}>
+        Sorry, this page does not exists
+      </Typography>
+      <Image src="/not-found.png" width={500} height={500} alt="not-found" />
     </Box>
+  );
 }

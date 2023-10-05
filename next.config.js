@@ -6,7 +6,6 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ['image/avif', 'image/webp']
-    // formats: ['image/webp']
   },
   compiler: { removeConsole: process.env.NODE_ENV === 'production' },
   modularizeImports: {
@@ -16,6 +15,10 @@ const nextConfig = {
     },
     '@mui/icons-material': {
       transform: '@mui/icons-material/{{member}}',
+      preventFullImport: true
+    },
+    '@mui/lab': {
+      transform: '@mui/lab/{{member}}',
       preventFullImport: true
     }
   },

@@ -8,7 +8,7 @@ import { Box } from '@ui/Box';
 import { Button } from '@ui/Button';
 import { Typography } from '@ui/Typography';
 
-const NavBar = () => {
+export function NavBar() {
   return (
     <AppBar position="sticky">
       <Toolbar disableGutters className={styles.navBarToolbar}>
@@ -45,6 +45,9 @@ const NavBar = () => {
           </Typography>
         </Box>
         <Box className={styles.navBarLinksContainer} sx={{ '--display': { xs: 'none', md: 'flex' } }}>
+          <Link href="/">
+            <Button className={styles.navBarLink}>Home</Button>
+          </Link>
           <Link href="/contactMe">
             <Button className={styles.navBarLink}>Contact me</Button>
           </Link>
@@ -55,6 +58,4 @@ const NavBar = () => {
       </Toolbar>
     </AppBar>
   );
-};
-
-export default NavBar;
+}

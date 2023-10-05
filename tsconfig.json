@@ -26,6 +26,7 @@
     "paths": {
       "@/*": ["./*"],
       "@ui/*": ["components/ui/*"],
+      "@icons/*": ["components/ui/icons/*"],
       "@theme/*": ["common/theme/*"],
       "@common/*": ["components/common/*"]
     }

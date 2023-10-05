@@ -1,5 +1,5 @@
 import './globals.css';
-import NavBar from '@/components/navBar';
+import NavBar from '@/components/NavBar';
 import Footer from '@/components/footer';
 import { PropsWithChildren } from 'react';
 import { ThemeWrapper } from '@/components/common/ThemeWrapper';

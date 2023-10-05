@@ -1,42 +1,29 @@
-'use client';
-import React, { useState } from 'react';
-import { AppBar, Box, Button, SwipeableDrawer, Toolbar, Typography } from '@mui/material';
 import Link from 'next/link';
-import { Menu } from '@mui/icons-material';
-import Logo from '@/components/logo';
+import { Logo } from '@/components/logo';
 import styles from './navBar.module.css';
+import { NavigationWrapper } from './NavigationWrapper';
+import { AppBar } from '@ui/AppBar';
+import { Toolbar } from '@ui/Toolbar';
+import { Box } from '@ui/Box';
+import { Button } from '@ui/Button';
+import { Typography } from '@ui/Typography';
 
 const NavBar = () => {
-  const [anchorElNav, setAnchorElNav] = useState<null | SVGSVGElement>(null);
-
-  const handleOpenNavMenu = (event: React.MouseEvent<SVGSVGElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
   return (
     <AppBar position="sticky">
       <Toolbar disableGutters className={styles.navBarToolbar}>
         <Box className={styles.navBarMenuContainer} sx={{ '--display': { xs: 'flex', md: 'none' } }}>
-          <Menu color={'action'} onClick={e => handleOpenNavMenu(e)} />
-          <SwipeableDrawer anchor="left" open={!!anchorElNav} onClose={handleCloseNavMenu} onOpen={handleOpenNavMenu}>
-            <Box
-              className={styles.navBarMenuItemList}
-              role="presentation"
-              onClick={handleCloseNavMenu}
-              onKeyDown={handleCloseNavMenu}
-            >
-              <Link href="/contactMe">
-                <Button className={styles.navBarMenuItem}>Contact me</Button>
-              </Link>
-              <Link href="/aboutMe">
-                <Button className={styles.navBarMenuItem}>About me</Button>
-              </Link>
-            </Box>
-          </SwipeableDrawer>
+          <NavigationWrapper>
+            <Link href="/">
+              <Button className={styles.navBarMenuItem}>Home</Button>
+            </Link>
+            <Link href="/contactMe">
+              <Button className={styles.navBarMenuItem}>Contact me</Button>
+            </Link>
+            <Link href="/aboutMe">
+              <Button className={styles.navBarMenuItem}>About me</Button>
+            </Link>
+          </NavigationWrapper>
         </Box>
 
         <Box

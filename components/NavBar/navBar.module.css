@@ -15,14 +15,6 @@
     margin-bottom: 2rem;
 }
 
-.navBarMenuItem {
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-    margin-left: 1rem;
-    color: white;
-    display: block;
-}
-
 .navBarLogoContainer {
     padding: .5rem;
     cursor: pointer;

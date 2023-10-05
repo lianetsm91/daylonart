@@ -5,8 +5,9 @@ import { NavigationWrapper } from './NavigationWrapper';
 import { AppBar } from '@ui/AppBar';
 import { Toolbar } from '@ui/Toolbar';
 import { Box } from '@ui/Box';
-import { Button } from '@ui/Button';
 import { Typography } from '@ui/Typography';
+import { NavigationActions } from '@/components/NavBar/NavigationActions';
+import { NavigationName } from '@/components/NavBar/NavigationName';
 
 export function NavBar() {
   return (
@@ -14,15 +15,7 @@ export function NavBar() {
       <Toolbar disableGutters className={styles.navBarToolbar}>
         <Box className={styles.navBarMenuContainer} sx={{ '--display': { xs: 'flex', md: 'none' } }}>
           <NavigationWrapper>
-            <Link href="/">
-              <Button className={styles.navBarMenuItem}>Home</Button>
-            </Link>
-            <Link href="/contactMe">
-              <Button className={styles.navBarMenuItem}>Contact me</Button>
-            </Link>
-            <Link href="/aboutMe">
-              <Button className={styles.navBarMenuItem}>About me</Button>
-            </Link>
+            <NavigationActions />
           </NavigationWrapper>
         </Box>
 
@@ -37,23 +30,10 @@ export function NavBar() {
             <Logo />
           </Link>
 
-          <Typography variant="body1" className={styles.navBarLogoText}>
-            <Link href="/">
-              DAYLON
-              <br /> &nbsp;ART
-            </Link>
-          </Typography>
+          <NavigationName />
         </Box>
         <Box className={styles.navBarLinksContainer} sx={{ '--display': { xs: 'none', md: 'flex' } }}>
-          <Link href="/">
-            <Button className={styles.navBarLink}>Home</Button>
-          </Link>
-          <Link href="/contactMe">
-            <Button className={styles.navBarLink}>Contact me</Button>
-          </Link>
-          <Link href="/aboutMe">
-            <Button className={styles.navBarLink}>About me</Button>
-          </Link>
+          <NavigationActions />
         </Box>
       </Toolbar>
     </AppBar>

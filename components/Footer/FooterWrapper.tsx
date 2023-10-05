@@ -7,7 +7,6 @@ import { useTheme } from '@mui/system';
 
 export function FooterWrapper({ children }: PropsWithChildren) {
   const theme = useTheme();
-  console.log('Client Side');
 
   return (
     <Box className={styles.footerContainer} sx={{ '--color': theme.palette.primary.light }}>

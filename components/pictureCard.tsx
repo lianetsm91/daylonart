@@ -4,18 +4,29 @@ import { Box } from '@ui/Box';
 import { Typography } from '@ui/Typography';
 import { Tooltip } from '@ui/Tooltip';
 import { Stack } from '@ui/Stack';
+import { TImageSize } from '@/types/ImageBase';
+import { SxProps } from '@mui/system';
 
-interface Props {
+type Props = TImageSize & {
   title: string;
   dimensions: { width: string; height: string };
   technic: string;
   imageUrl: string;
   sold: boolean;
   handleOpenImage: any;
-}
+};
 
-function PictureCard({ title, dimensions, technic, imageUrl, sold, handleOpenImage }: Props) {
-  const handleOpen = (imageUrl: string, title: string) => {
+const IMAGE_CONTAINER_SX: SxProps = {
+  '& > img': {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover!important'
+  }
+};
+
+function PictureCard({ title, dimensions, technic, imageUrl, sold, handleOpenImage, w, h }: Props) {
+  const handleOpen = () => {
     handleOpenImage(true, imageUrl, title);
   };
 
@@ -34,42 +45,27 @@ function PictureCard({ title, dimensions, technic, imageUrl, sold, handleOpenIma
   );
 
   return (
-    <Stack key={imageUrl} onClick={() => handleOpen(imageUrl, title)} className={styles.pictureCardImageListItem}>
-      {/*<Box sx={{position: "relative"}}>*/}
-      {/*    <Image*/}
-      {/*        src={`${imageUrl}?w=248&fit=crop&auto=format`}*/}
-      {/*        style={{objectFit: "contain"}}*/}
-      {/*        // width={248}*/}
-      {/*        // height={248}*/}
-      {/*        // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"*/}
-      {/*        fill*/}
-      {/*        alt={title}*/}
-      {/*    />*/}
-      {/*</Box>*/}
-      <img
-        src={`${imageUrl}?w=248&fit=crop&auto=format`}
-        srcSet={`${imageUrl}?w=248&fit=crop&auto=format&dpr=2 2x`}
+    <Stack
+      key={imageUrl}
+      onClick={handleOpen}
+      className={styles.pictureCardImageListItem}
+      height={`${h}px`}
+      width={`${w}px`}
+      sx={IMAGE_CONTAINER_SX}
+    >
+      <Image
+        src={`${imageUrl}`}
         alt={title}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        height={h}
+        width={w}
+        style={{ objectFit: 'contain' }}
       />
       <Box className={styles.pictureCardFooter}>
         <Typography variant={'subtitle1'}>{title}</Typography>
         {subtitle}
       </Box>
-      {/*<ImageListItemBar title={title} subtitle={`${dimensions.width} X ${dimensions.height}`}/>*/}
     </Stack>
-    // <div className={styles.pictureCardContainer}>
-    //     <div className={styles.imageContainer}>
-    //         <Image
-    //             src={imageUrl}
-    //             style={{objectFit: "cover"}}
-    //             fill
-    //             alt={title}
-    //         />
-    //     </div>
-    //     <h2>{title}</h2>
-    //     <h3>{`${dimensions.width} X ${dimensions.height}`}</h3>
-    //     <h3>{technic}</h3>
-    // </div>
   );
 }
 

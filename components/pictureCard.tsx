@@ -26,7 +26,7 @@ const IMAGE_CONTAINER_SX: SxProps = {
   }
 };
 
-function PictureCard({ title, dimensions, technic, imageUrl, sold, handleOpenImage, w, h, eager }: Props) {
+export const PictureCard = ({ title, dimensions, technic, imageUrl, sold, handleOpenImage, w, h, eager }: Props) => {
   const handleOpen = () => {
     handleOpenImage(true, imageUrl, title);
   };
@@ -69,6 +69,4 @@ function PictureCard({ title, dimensions, technic, imageUrl, sold, handleOpenIma
       </Box>
     </Stack>
   );
-}
-
-export default PictureCard;
+};

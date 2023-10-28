@@ -1,7 +1,4 @@
 import localFont from 'next/font/local';
-import { Inter } from 'next/font/google';
-
-export const INTER = Inter({ subsets: ['latin'] });
 
 export const ROBOTO = localFont({
   src: [

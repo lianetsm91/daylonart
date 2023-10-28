@@ -5,7 +5,6 @@ import { NavigationWrapper } from './NavigationWrapper';
 import { AppBar } from '@ui/AppBar';
 import { Toolbar } from '@ui/Toolbar';
 import { Box } from '@ui/Box';
-import { Typography } from '@ui/Typography';
 import { NavigationActions } from '@/components/NavBar/NavigationActions';
 import { NavigationName } from '@/components/NavBar/NavigationName';
 

@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import Masonry from '@mui/lab/Masonry';
 import { imagesBase } from '@/utils/imagesBase';
-import PictureCard from '@/components/pictureCard';
-import ImageDetailsModal from '@/components/imageDetailsModal';
+import { PictureCard } from '@/components/pictureCard';
+import { ImageDetailsModal } from '@/components/imageDetailsModal';
 import styles from './imageList.module.css';
 import { Box } from '@ui/Box';
 import { TImageSize } from '@/types/ImageBase';

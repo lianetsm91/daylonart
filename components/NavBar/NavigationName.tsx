@@ -4,7 +4,6 @@ import { SxProps } from '@mui/system';
 
 const SX: SxProps = {
   marginLeft: '0.5rem',
-  fontFamily: 'monospace',
   fontWeight: 700,
   letterSpacing: '.3rem',
   color: 'inherit',

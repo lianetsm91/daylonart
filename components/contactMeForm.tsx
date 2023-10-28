@@ -13,7 +13,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) 
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-const ContactMeForm = () => {
+export const ContactMeForm = () => {
   const [disableButton, setDisableButton] = useState(true);
   const [sending, setSending] = useState(false);
   const [snackBar, setSnackBar] = useState({ open: false, severity: '', message: '' });
@@ -211,5 +211,3 @@ const ContactMeForm = () => {
     </Box>
   );
 };
-
-export default ContactMeForm;

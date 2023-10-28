@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Box } from '@ui/Box';
 import { Typography } from '@ui/Typography';
 
-export default function Custom404() {
+const Custom404 = () => {
   return (
     <Box
       sx={{
@@ -26,4 +26,6 @@ export default function Custom404() {
       <Image src="/not-found.png" width={500} height={500} alt="not-found" />
     </Box>
   );
-}
+};
+
+export default Custom404;

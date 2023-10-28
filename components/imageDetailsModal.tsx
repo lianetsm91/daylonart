@@ -10,7 +10,7 @@ interface Props {
   handleOpenImage: any;
 }
 
-const ImageDetailsModal = ({ openImage, handleOpenImage }: Props) => (
+export const ImageDetailsModal = ({ openImage, handleOpenImage }: Props) => (
   <Modal
     disablePortal
     open={openImage.open}
@@ -34,5 +34,3 @@ const ImageDetailsModal = ({ openImage, handleOpenImage }: Props) => (
     </Box>
   </Modal>
 );
-
-export default ImageDetailsModal;

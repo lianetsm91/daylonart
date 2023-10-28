@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import SocialButton from '../socialButton';
+import { SocialButton } from '../socialButton';
 import styles from './footer.module.css';
 import { Box } from '@ui/Box';
 import { Stack } from '@ui/Stack';
@@ -12,10 +11,10 @@ export function FooterNavigation() {
         <NavigationActions hideHome />
       </Stack>
       <Stack direction="row" alignItems="start" spacing={1}>
-        <SocialButton type="instagram" size="small" />
-        <SocialButton type="facebook" size="small" />
-        <SocialButton type="ws" size="small" />
-        {/*<SocialButton type='linkedin' size='small'/>*/}
+        <SocialButton socialType="instagram" size="small" />
+        <SocialButton socialType="facebook" size="small" />
+        <SocialButton socialType="ws" size="small" />
+        {/*<SocialButton socialType='linkedin' size='small'/>*/}
       </Stack>
     </Box>
   );

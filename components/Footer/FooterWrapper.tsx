@@ -1,5 +1,4 @@
 'use client';
-
 import { PropsWithChildren } from 'react';
 import { Box } from '@ui/Box';
 import styles from './footer.module.css';

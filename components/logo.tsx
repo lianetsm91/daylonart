@@ -8,6 +8,8 @@ export function Logo() {
       x="0px"
       y="0px"
       viewBox="0 0 393 393"
+      xmlSpace="preserve"
+      style={{ height: '100%' }}
     >
       <g>
         <path

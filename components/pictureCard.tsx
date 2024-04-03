@@ -13,6 +13,7 @@ type Props = TImageSize & {
   technic: string;
   imageUrl: string;
   sold: boolean;
+  index: number;
   handleOpenImage: any;
   eager?: boolean;
 };
@@ -26,11 +27,18 @@ const IMAGE_CONTAINER_SX: SxProps = {
   }
 };
 
-export const PictureCard = ({ title, dimensions, technic, imageUrl, sold, handleOpenImage, w, h, eager }: Props) => {
-  const handleOpen = () => {
-    handleOpenImage(true, imageUrl, title);
-  };
-
+export const PictureCard = ({
+  title,
+  dimensions,
+  technic,
+  imageUrl,
+  sold,
+  index,
+  handleOpenImage,
+  w,
+  h,
+  eager
+}: Props) => {
   const subtitle = (
     <Box className={styles.pictureCardSubtitleContainer}>
       <Box className={styles.pictureCardSubtitleLeft}>
@@ -48,7 +56,7 @@ export const PictureCard = ({ title, dimensions, technic, imageUrl, sold, handle
   return (
     <Stack
       key={imageUrl}
-      onClick={handleOpen}
+      onClick={() => handleOpenImage(true, index, title)}
       className={styles.pictureCardImageListItem}
       height={`${h}px`}
       width={`${w}px`}

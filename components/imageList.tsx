@@ -25,20 +25,27 @@ function getImageFrontSize({ w, h }: TImageSize): TImageSize {
 }
 
 export function Images({ fileNames }: Props) {
-  const [openImage, setOpenImage] = useState({ open: false, imageUrl: '', title: '' });
+  const [openImage, setOpenImage] = useState({ open: false, index: 0, title: '' });
+  let currentIndex = -1;
 
-  const handleOpenImage = (open: boolean, imageUrl: string, title: string) => {
-    setOpenImage({ open, imageUrl, title });
+  const handleOpenImage = (open: boolean, index: number, title: string) => {
+    setOpenImage({ open, index, title });
   };
 
   return (
     <>
-      <ImageDetailsModal openImage={openImage} handleOpenImage={handleOpenImage} />
+      <ImageDetailsModal
+        openImage={openImage}
+        handleOpenImage={handleOpenImage}
+        imagesBase={imagesBase}
+        fileNames={fileNames}
+      />
       <Box className={styles.imageListContainer} id="image-list-container">
         <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={3} sx={{ m: '0 auto' }}>
           {fileNames.map(fileName => {
             const imageName = fileName.split('.')[0];
             if (imagesBase.hasOwnProperty(imageName)) {
+              currentIndex += 1;
               const { w, h } = getImageFrontSize({ ...imagesBase[imageName] });
               return (
                 <PictureCard
@@ -51,6 +58,7 @@ export function Images({ fileNames }: Props) {
                   dimensions={imagesBase[imageName].dimensions}
                   technic={imagesBase[imageName].technic}
                   imageUrl={`/images/${fileName}`}
+                  index={currentIndex}
                   handleOpenImage={handleOpenImage}
                 />
               );

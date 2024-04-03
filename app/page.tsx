@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { ImageBanner } from '@/components/imageBanner';
 import { Images } from '@/components/imageList';
-import styles from './home.module.css';
+import styles from './page.module.css';
 import { Box } from '@ui/Box';
 
 const postsDirectory = path.join(process.cwd(), 'public/images');

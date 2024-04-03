@@ -5,17 +5,17 @@
     transition: 1000ms all ease;
 }
 
-.image-banner-container .transition1 {
+.banner-image.transition1 {
     filter: blur(10px);
     opacity: 70%;
 }
 
-.image-banner-container .transition2 {
+.banner-image.transition2 {
     filter: blur(12px);
     opacity: 50%;
 }
 
-.image-banner-container .transition3 {
+.banner-image.transition3 {
     opacity: 0;
 }
 
@@ -45,6 +45,6 @@
 
 @media only screen and (min-width: 900px) {
     .image-banner-container, .image-banner-container::after {
-        height: 40vh;
+        height: 30vh;
     }
 }

@@ -24,13 +24,11 @@ function getImageFrontSize({ w, h }: TImageSize): TImageSize {
   return { w, h };
 }
 
-export function Images({ fileNames }: Props) {
+export function ImageList({ fileNames }: Props) {
   const [openImage, setOpenImage] = useState({ open: false, index: 0, title: '' });
   let currentIndex = -1;
 
-  const handleOpenImage = (open: boolean, index: number, title: string) => {
-    setOpenImage({ open, index, title });
-  };
+  const handleOpenImage = (open: boolean, index: number, title: string) => setOpenImage({ open, index, title });
 
   return (
     <>

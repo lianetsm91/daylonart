@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { ImageBanner } from '@/components/imageBanner';
-import { Images } from '@/components/imageList';
+import { ImageList } from '@/components/imageList';
 import styles from './page.module.css';
 import { Box } from '@ui/Box';
 
@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <Box className={styles.homePageContainer}>
       <ImageBanner />
-      <Images fileNames={fileNames} />
+      <ImageList fileNames={fileNames} />
     </Box>
   );
 };

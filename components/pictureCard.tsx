@@ -4,18 +4,12 @@ import { Box } from '@ui/Box';
 import { Typography } from '@ui/Typography';
 import { Tooltip } from '@ui/Tooltip';
 import { Stack } from '@ui/Stack';
-import { TImageSize } from '@/types/ImageBase';
 import { SxProps } from '@mui/system';
+import { TProcessedImage } from '@/types/ProcessedImage';
+import { TOpenImage } from '@/types/OpenImage';
 
-type Props = TImageSize & {
-  title: string;
-  dimensions: { width: string; height: string };
-  technic: string;
-  imageUrl: string;
-  sold: boolean;
-  index: number;
-  handleOpenImage: any;
-  eager?: boolean;
+type Props = TProcessedImage & {
+  handleOpenImage: (openImg: TOpenImage) => void;
 };
 
 const IMAGE_CONTAINER_SX: SxProps = {
@@ -28,16 +22,18 @@ const IMAGE_CONTAINER_SX: SxProps = {
 };
 
 export const PictureCard = ({
+  imageName,
+  src,
+  width,
+  height,
+  eager,
   title,
+  sold,
   dimensions,
   technic,
-  imageUrl,
-  sold,
+  blurUrl,
   index,
-  handleOpenImage,
-  w,
-  h,
-  eager
+  handleOpenImage
 }: Props) => {
   const subtitle = (
     <Box className={styles.pictureCardSubtitleContainer}>
@@ -55,21 +51,22 @@ export const PictureCard = ({
 
   return (
     <Stack
-      key={imageUrl}
-      onClick={() => handleOpenImage(true, index, title)}
+      key={imageName}
+      onClick={() => handleOpenImage({ open: true, index, title })}
       className={styles.pictureCardImageListItem}
-      height={`${h}px`}
-      width={`${w}px`}
+      height={`${height}px`}
+      width="100%"
       sx={IMAGE_CONTAINER_SX}
     >
       <Image
-        src={`${imageUrl}`}
+        src={`${src}`}
         alt={title}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        height={h}
-        width={w}
-        style={{ objectFit: 'contain' }}
+        height={height}
+        width={width}
         loading={eager ? 'eager' : 'lazy'}
+        placeholder="blur"
+        blurDataURL={blurUrl}
       />
       <Box className={styles.pictureCardFooter}>
         <Typography variant={'subtitle1'}>{title}</Typography>

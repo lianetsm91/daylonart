@@ -7,8 +7,6 @@ export const imagesBase: TImageBase = {
       width: '100 cm',
       height: '90 cm'
     },
-    w: 2865,
-    h: 2574,
     eager: true,
     technic: 'Oleo over canvas',
     sold: false
@@ -19,8 +17,6 @@ export const imagesBase: TImageBase = {
       width: '90 cm',
       height: '100 cm'
     },
-    w: 2572,
-    h: 3114,
     eager: true,
     technic: 'Oleo over canvas',
     sold: true
@@ -31,8 +27,6 @@ export const imagesBase: TImageBase = {
       width: 'cm',
       height: 'cm'
     },
-    w: 2388,
-    h: 3442,
     eager: true,
     technic: 'Oleo over canvas',
     sold: false
@@ -43,8 +37,6 @@ export const imagesBase: TImageBase = {
       width: '60 cm',
       height: '80 cm'
     },
-    w: 954,
-    h: 1171,
     eager: true,
     technic: 'Oleo over canvas',
     sold: true
@@ -55,8 +47,6 @@ export const imagesBase: TImageBase = {
       width: '100 cm',
       height: '90 cm'
     },
-    w: 2865,
-    h: 2585,
     eager: true,
     technic: 'Oleo over canvas',
     sold: false
@@ -67,8 +57,6 @@ export const imagesBase: TImageBase = {
       width: '130 cm',
       height: '80 cm'
     },
-    w: 3357,
-    h: 1809,
     eager: true,
     technic: 'Oleo over canvas',
     sold: true
@@ -79,8 +67,6 @@ export const imagesBase: TImageBase = {
       width: '100 cm',
       height: '120 cm'
     },
-    w: 1649,
-    h: 2005,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -90,8 +76,6 @@ export const imagesBase: TImageBase = {
       width: '80 cm',
       height: '90 cm'
     },
-    w: 1053,
-    h: 1022,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -101,8 +85,6 @@ export const imagesBase: TImageBase = {
       width: ' cm',
       height: ' cm'
     },
-    w: 2403,
-    h: 3489,
     technic: 'Oleo over canvas',
     sold: false
   },
@@ -112,8 +94,6 @@ export const imagesBase: TImageBase = {
       width: ' cm',
       height: ' cm'
     },
-    w: 946,
-    h: 743,
     technic: 'Oleo over canvas',
     sold: false
   },
@@ -123,8 +103,6 @@ export const imagesBase: TImageBase = {
       width: '305 cm',
       height: '153 cm'
     },
-    w: 1061,
-    h: 532,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -134,8 +112,6 @@ export const imagesBase: TImageBase = {
       width: '60 cm',
       height: '80 cm'
     },
-    w: 1711,
-    h: 2343,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -145,8 +121,6 @@ export const imagesBase: TImageBase = {
       width: '100 cm',
       height: '120 cm'
     },
-    w: 1032,
-    h: 1225,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -156,8 +130,6 @@ export const imagesBase: TImageBase = {
       width: '120 cm',
       height: '100 cm'
     },
-    w: 3068,
-    h: 2528,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -167,8 +139,6 @@ export const imagesBase: TImageBase = {
       width: '120 cm',
       height: '100 cm'
     },
-    w: 1697,
-    h: 1273,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -178,8 +148,6 @@ export const imagesBase: TImageBase = {
       width: '60 cm',
       height: '80 cm'
     },
-    w: 2133,
-    h: 2439,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -189,8 +157,6 @@ export const imagesBase: TImageBase = {
       width: '100 cm',
       height: '120 cm'
     },
-    w: 960,
-    h: 1157,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -200,8 +166,6 @@ export const imagesBase: TImageBase = {
       width: '120 cm',
       height: '100 cm'
     },
-    w: 2247,
-    h: 2715,
     technic: 'Oleo over canvas',
     sold: false
   },
@@ -211,8 +175,6 @@ export const imagesBase: TImageBase = {
       width: '40 cm',
       height: '75 cm'
     },
-    w: 641,
-    h: 1222,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -222,8 +184,6 @@ export const imagesBase: TImageBase = {
       width: '100 cm',
       height: '120 cm'
     },
-    w: 1727,
-    h: 2044,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -233,8 +193,6 @@ export const imagesBase: TImageBase = {
       width: '60 cm',
       height: '80 cm'
     },
-    w: 2622,
-    h: 3527,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -244,8 +202,6 @@ export const imagesBase: TImageBase = {
       width: '120 cm',
       height: '100 cm'
     },
-    w: 1987,
-    h: 1632,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -255,8 +211,6 @@ export const imagesBase: TImageBase = {
       width: '80 cm',
       height: '130 cm'
     },
-    w: 2087,
-    h: 3309,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -266,8 +220,6 @@ export const imagesBase: TImageBase = {
       width: '100 cm',
       height: '120 cm'
     },
-    w: 576,
-    h: 695,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -277,8 +229,6 @@ export const imagesBase: TImageBase = {
       width: '90 cm',
       height: '100 cm'
     },
-    w: 1515,
-    h: 1664,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -288,8 +238,6 @@ export const imagesBase: TImageBase = {
       width: '100 cm',
       height: '90 cm'
     },
-    w: 1945,
-    h: 1776,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -299,8 +247,6 @@ export const imagesBase: TImageBase = {
       width: 'cm',
       height: 'cm'
     },
-    w: 1925,
-    h: 2556,
     technic: 'Oleo over canvas',
     sold: false
   },
@@ -310,8 +256,6 @@ export const imagesBase: TImageBase = {
       width: 'cm',
       height: 'cm'
     },
-    w: 955,
-    h: 1177,
     technic: 'Oleo over canvas',
     sold: false
   },
@@ -321,8 +265,6 @@ export const imagesBase: TImageBase = {
       width: 'cm',
       height: 'cm'
     },
-    w: 1080,
-    h: 1182,
     technic: 'Oleo over canvas',
     sold: false
   },
@@ -332,8 +274,6 @@ export const imagesBase: TImageBase = {
       width: '60 cm',
       height: '80 cm'
     },
-    w: 1572,
-    h: 2160,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -343,8 +283,6 @@ export const imagesBase: TImageBase = {
       width: '80 cm',
       height: '130 cm'
     },
-    w: 1653,
-    h: 2675,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -354,8 +292,6 @@ export const imagesBase: TImageBase = {
       width: '80 cm',
       height: '120 cm'
     },
-    w: 940,
-    h: 1268,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -365,8 +301,6 @@ export const imagesBase: TImageBase = {
       width: '60 cm',
       height: '80 cm'
     },
-    w: 1585,
-    h: 2120,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -376,8 +310,6 @@ export const imagesBase: TImageBase = {
       width: '80 cm',
       height: '130 cm'
     },
-    w: 1836,
-    h: 3264,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -387,8 +319,6 @@ export const imagesBase: TImageBase = {
       width: '120 cm',
       height: '100 cm'
     },
-    w: 2161,
-    h: 1749,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -398,8 +328,6 @@ export const imagesBase: TImageBase = {
       width: '90 cm',
       height: '100 cm'
     },
-    w: 2116,
-    h: 2373,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -409,8 +337,6 @@ export const imagesBase: TImageBase = {
       width: '80 cm',
       height: '100 cm'
     },
-    w: 1985,
-    h: 1568,
     technic: 'Oleo over canvas',
     sold: true
   },
@@ -420,8 +346,6 @@ export const imagesBase: TImageBase = {
       width: '80 cm',
       height: '100 cm'
     },
-    w: 1965,
-    h: 1495,
     technic: 'Oleo over canvas',
     sold: true
   }

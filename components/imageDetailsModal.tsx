@@ -4,19 +4,20 @@ import { Box } from '@ui/Box';
 import { Typography } from '@ui/Typography';
 import { CloseIco } from '@icons/CloseIco';
 import { ImageGallery } from '@/components/ImageGallery/imageGallery';
+import { TProcessedImage } from '@/types/ProcessedImage';
+import { TOpenImage } from '@/types/OpenImage';
 
 interface Props {
-  openImage: { open: boolean; index: number; title: string };
-  handleOpenImage: any;
-  imagesBase: any;
-  fileNames: string[];
+  openImage: TOpenImage;
+  handleOpenImage: (openImg: TOpenImage) => void;
+  items: TProcessedImage[];
 }
 
-export const ImageDetailsModal = ({ openImage, handleOpenImage, imagesBase, fileNames }: Props) => (
+export const ImageDetailsModal = ({ openImage, handleOpenImage, items }: Props) => (
   <Modal
     disablePortal
     open={openImage.open}
-    onClose={() => handleOpenImage(false, 0, '')}
+    onClose={() => handleOpenImage({ open: false, index: 0, title: '' })}
     aria-labelledby="modal-modal-title"
   >
     <Box className={styles.imageDetailsModalContainer}>
@@ -27,15 +28,10 @@ export const ImageDetailsModal = ({ openImage, handleOpenImage, imagesBase, file
         <CloseIco
           color={'action'}
           className={styles.imageDetailsModalCloseIcon}
-          onClick={() => handleOpenImage(false, 0, '')}
+          onClick={() => handleOpenImage({ open: false, index: 0, title: '' })}
         />
       </Box>
-      <ImageGallery
-        openImage={openImage}
-        imagesBase={imagesBase}
-        fileNames={fileNames}
-        handleOpenImage={handleOpenImage}
-      />
+      <ImageGallery openImage={openImage} items={items} handleOpenImage={handleOpenImage} />
     </Box>
   </Modal>
 );

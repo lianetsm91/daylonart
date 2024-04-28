@@ -1,7 +1,5 @@
-export type TImageSize = { w: number; h: number };
-
 export type TImageBase = {
-  [key: string]: TImageSize & {
+  [key: string]: {
     title: string;
     dimensions: {
       width: string;

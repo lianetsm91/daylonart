@@ -15,10 +15,12 @@
     "@mui/icons-material": "^5.15.15",
     "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "^5.15.15",
+    "@plaiceholder/next": "^3.0.0",
     "dotenv": "^16.4.5",
     "embla-carousel-react": "^8.0.2",
     "next": "^14.2.3",
     "nodemailer": "6.9.13",
+    "plaiceholder": "^3.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

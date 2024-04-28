@@ -2,18 +2,34 @@ import React, { useCallback, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import styles from './embla.module.css';
-import { TImageBase } from '@/types/ImageBase';
 import { ArrowForwardIco } from '@icons/ArrowForwardIco';
 import { ArrowBackIco } from '@icons/ArrowBackIco';
+import { TProcessedImage } from '@/types/ProcessedImage';
+import { TOpenImage } from '@/types/OpenImage';
 
 interface Props {
-  openImage: { open: boolean; index: number; title: string };
-  imagesBase: TImageBase;
-  fileNames: string[];
-  handleOpenImage: (open: boolean, index: number, title: string) => {};
+  openImage: TOpenImage;
+  items: TProcessedImage[];
+  handleOpenImage: (openImg: TOpenImage) => void;
 }
 
-export const ImageGallery = ({ openImage, imagesBase, fileNames, handleOpenImage }: Props) => {
+const shimmer = (w: number, h: number) => `
+<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="g">
+      <stop stop-color="transparent" offset="0%" />
+      <stop stop-color="#272727" stop-opacity="70%" offset="50%" />
+      <stop stop-color="transparent" offset="90%" />
+    </linearGradient>
+  </defs>
+  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="2s" repeatCount="indefinite"  />
+</svg>`;
+
+const toBase64 = (str: string) =>
+  typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str);
+
+export const ImageGallery = ({ openImage, handleOpenImage, items }: Props) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     containScroll: 'trimSnaps',
@@ -23,8 +39,11 @@ export const ImageGallery = ({ openImage, imagesBase, fileNames, handleOpenImage
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
-    const imageName = fileNames[emblaApi.selectedScrollSnap() + 1]?.split('.')[0];
-    handleOpenImage(true, emblaApi.selectedScrollSnap(), imagesBase[imageName]?.title || 'NT');
+    handleOpenImage({
+      open: true,
+      index: emblaApi.selectedScrollSnap(),
+      title: items[emblaApi.selectedScrollSnap()]?.title || 'NT'
+    });
   }, [emblaApi]);
 
   useEffect(() => {
@@ -45,24 +64,17 @@ export const ImageGallery = ({ openImage, imagesBase, fileNames, handleOpenImage
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
-          {fileNames.map(fileName => {
-            const imageName = fileName.split('.')[0];
-            if (imagesBase.hasOwnProperty(imageName)) {
-              return (
-                <div className={styles.embla__slide} key={fileName}>
-                  <Image
-                    src={`/images/${fileName}`}
-                    className={styles.embla__slide__img}
-                    fill
-                    alt={imagesBase[imageName].title || 'Image coming soon'}
-                    placeholder="blur"
-                    blurDataURL="/images/a1-blur.webp"
-                  />
-                </div>
-              );
-            }
-            return null;
-          })}
+          {items.map(({ src, title, imageName }) => (
+            <div className={styles.embla__slide} key={imageName}>
+              <Image
+                src={src}
+                className={styles.embla__slide__img}
+                fill
+                alt={title || 'Image coming soon'}
+                placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+              />
+            </div>
+          ))}
         </div>
       </div>
       <ArrowBackIco

@@ -5,3 +5,9 @@
     position: relative;
     z-index: 1;
 }
+
+.spinnerContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 132px;
+}

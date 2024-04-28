@@ -2,7 +2,8 @@
 import { useEffect, useState } from 'react';
 import { imagesBase } from '@/utils/imagesBase';
 import { ImageDetailsModal } from '@/components/imageDetailsModal';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 import Masonry from '@mui/lab/Masonry';
 import { PictureCard } from '@/components/pictureCard';
 import styles from './imageList.module.css';
@@ -49,31 +50,7 @@ export const ImageList = ({ images }: { images: TImage[] }) => {
     <>
       <ImageDetailsModal openImage={openImage} handleOpenImage={handleOpenImage} items={items} />
       <Box className={styles.imageListContainer} id="image-list-container">
-        <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={3} sx={{ m: '0 auto' }}>
-          {fileNames.map(fileName => {
-            const imageName = fileName.split('.')[0];
-            if (imagesBase.hasOwnProperty(imageName)) {
-              currentIndex += 1;
-              const { w, h } = getImageFrontSize({ ...imagesBase[imageName] });
-              return (
-                <PictureCard
-                  w={w}
-                  h={h}
-                  eager={imagesBase[imageName].eager}
-                  key={fileName}
-                  title={imagesBase[imageName].title}
-                  sold={imagesBase[imageName].sold}
-                  dimensions={imagesBase[imageName].dimensions}
-                  technic={imagesBase[imageName].technic}
-                  imageUrl={`/images/${fileName}`}
-                  index={currentIndex}
-                  handleOpenImage={handleOpenImage}
-                />
-              );
-            }
-            return null;
-          })}
-        </Masonry>
+        {items.length ? (
           <Masonry
             columns={{ xs: 1, sm: 2, md: 3 }}
             spacing={3}
@@ -100,6 +77,11 @@ export const ImageList = ({ images }: { images: TImage[] }) => {
               />
             ))}
           </Masonry>
+        ) : (
+          <Box className={styles.spinnerContainer}>
+            <CircularProgress color="secondary" aria-describedby="image-list-container" />
+          </Box>
+        )}
       </Box>
     </>
   );

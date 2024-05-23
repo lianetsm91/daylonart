@@ -44,7 +44,7 @@ export function ImageBanner() {
 
   return (
     <Box className="image-banner-container">
-      <Image src="/banner.webp" fill alt="banner-image" className="banner-image" />
+      <Image src="/banner.webp" fill alt="banner-image" className="banner-image" priority quality="0" />
     </Box>
   );
 }

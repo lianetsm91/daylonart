@@ -1,6 +1,8 @@
 import styles from './aboutMe.module.css';
 import { Box } from '@ui/Box';
 import { Typography } from '@ui/Typography';
+import Image from 'next/image';
+import aboutMePic from '@/public/daylon.webp';
 
 const AboutMe = () => (
   <Box
@@ -14,7 +16,7 @@ const AboutMe = () => (
       className={styles.aboutMeTextContainer}
       sx={{
         '--width': { xs: '100%', md: '40%' },
-        '--pt': { xs: '2rem%', md: '5rem' },
+        '--pt': { xs: '2rem', md: '5rem' },
         '--pr': { xs: 0, md: '2rem' }
       }}
     >
@@ -35,7 +37,15 @@ const AboutMe = () => (
       </Typography>
     </Box>
     <Box className={styles.aboutMeImageContainer} sx={{ '--width': { xs: '100%', md: '60%' } }}>
-      <img src="/daylon.webp" alt="daylon-image" className={styles.aboutMeImage} />
+      <Image
+        src={aboutMePic}
+        alt="Daylon image"
+        fill
+        style={{
+          objectFit: 'cover'
+        }}
+        placeholder="blur"
+      />
     </Box>
   </Box>
 );

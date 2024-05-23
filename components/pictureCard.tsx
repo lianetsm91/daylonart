@@ -17,7 +17,7 @@ const IMAGE_CONTAINER_SX: SxProps = {
     position: 'absolute',
     width: '100%',
     height: '100%',
-    objectFit: 'cover!important'
+    objectFit: 'cover !important'
   }
 };
 

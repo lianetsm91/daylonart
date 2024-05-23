@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import notFoundPic from '@/public/not-found.webp';
 import { Box } from '@ui/Box';
 import { Typography } from '@ui/Typography';
 
@@ -21,9 +22,18 @@ const Custom404 = () => {
       }}
     >
       <Typography variant="h4" sx={{ my: 8, textAlign: 'center' }}>
-        Sorry, this page does not exists
+        Oops! Page not found
       </Typography>
-      <Image src="/not-found.png" width={500} height={500} alt="not-found" />
+      <Image
+        src={notFoundPic}
+        alt="not-found"
+        placeholder="blur"
+        style={{
+          width: '100%',
+          height: 'auto',
+          maxWidth: '600px'
+        }}
+      />
     </Box>
   );
 };

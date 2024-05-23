@@ -25,18 +25,12 @@
 .aboutMeImageContainer {
     width: var(--width);
     overflow: hidden;
+    position: relative;
 }
 
 @media only screen and (max-width: 899px) {
-    .aboutMeImage {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media only screen and (min-width: 900px) {
-    .aboutMeImage {
-        width: auto;
-        height: 100%;
+    .aboutMeImageContainer {
+        height: 100vh;
+        margin-bottom: 24px;
     }
 }

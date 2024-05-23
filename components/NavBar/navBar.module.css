@@ -30,13 +30,6 @@
     justify-content: end;
 }
 
-.navBarLink {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: white;
-    display: block;
-}
-
 .navBarLogoText {
     margin-left: .5rem;
     font-family: monospace;

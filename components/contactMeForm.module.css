@@ -5,3 +5,7 @@
 .contactMeSnackbar {
     width: 100%
 }
+
+.formField input:-internal-autofill-selected {
+    box-shadow: 0 0 0 100px var(--boxShadowColor) inset !important;
+}

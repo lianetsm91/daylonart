@@ -8,12 +8,15 @@ import { Box } from '@ui/Box';
 import { TextField } from '@ui/TextField';
 import { SendIco } from '@icons/SendIco';
 import { Snackbar } from '@ui/Snackbar';
+import { useTheme } from '@mui/system';
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => (
   <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
 ));
+Alert.displayName = 'Alert';
 
 export const ContactMeForm = () => {
+  const theme = useTheme();
   const [disableButton, setDisableButton] = useState(true);
   const [sending, setSending] = useState(false);
   const [snackBar, setSnackBar] = useState({ open: false, severity: '', message: '' });
@@ -24,7 +27,6 @@ export const ContactMeForm = () => {
     if (sending) return;
 
     //todo use hook useFormControl https://mui.com/material-ui/react-text-field/
-    //todo sobreescribir estilos para el email cuando es autofilled
     let nameErrors = `${noSpecialCharacters(formValues.get('name')?.value)} ${maxLength(
       formValues.get('name')?.value,
       50
@@ -166,6 +168,8 @@ export const ContactMeForm = () => {
         type="email"
         onChange={e => onChange(e, 'email')}
         onBlur={() => onBlur('email')}
+        className={styles.formField}
+        sx={{ '--boxShadowColor': theme.palette.primary.light }}
       />
       <TextField
         label="What are you interested in?"

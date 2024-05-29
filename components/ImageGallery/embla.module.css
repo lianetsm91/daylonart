@@ -2,8 +2,9 @@
     --slide-spacing: 0;
     --slide-size: 100%;
     --slide-height: 90%;
-    padding: 0 1rem 1rem;
+    padding: 0;
     height: calc(100% - 60px);
+    position: relative;
 }
 
 .embla__viewport {
@@ -43,13 +44,20 @@
     font-size: 2rem;
     height: 4rem;
     cursor: pointer;
-    background-color: rgba(18, 18, 18, 0.9);
+    background-color: rgba(18, 18, 18, 0.7);
+    border-radius: 2px;
 }
 
 .embla__prev {
-    left: 2rem;
+    left: 1rem;
 }
 
 .embla__next {
-    right: 2rem;
+    right: 1rem;
+}
+
+@media only screen and (min-width: 900px) {
+    .embla {
+        padding: 0 1rem;
+    }
 }

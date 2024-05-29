@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
+import { renderToString } from 'react-dom/server';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import styles from './embla.module.css';
@@ -6,25 +7,14 @@ import { ArrowForwardIco } from '@icons/ArrowForwardIco';
 import { ArrowBackIco } from '@icons/ArrowBackIco';
 import { TProcessedImage } from '@/types/ProcessedImage';
 import { TOpenImage } from '@/types/OpenImage';
+import { Shimmer } from './shimmer';
+import { Box } from '@ui/Box';
 
 interface Props {
   openImage: TOpenImage;
   items: TProcessedImage[];
   handleOpenImage: (openImg: TOpenImage) => void;
 }
-
-const shimmer = (w: number, h: number) => `
-<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <linearGradient id="g">
-      <stop stop-color="transparent" offset="0%" />
-      <stop stop-color="#272727" stop-opacity="70%" offset="50%" />
-      <stop stop-color="transparent" offset="90%" />
-    </linearGradient>
-  </defs>
-  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
-  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="2s" repeatCount="indefinite"  />
-</svg>`;
 
 const toBase64 = (str: string) =>
   typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str);
@@ -61,32 +51,34 @@ export const ImageGallery = ({ openImage, handleOpenImage, items }: Props) => {
   );
 
   return (
-    <div className={styles.embla}>
-      <div className={styles.embla__viewport} ref={emblaRef}>
-        <div className={styles.embla__container}>
+    <Box className={styles.embla}>
+      <Box className={styles.emblaViewport} ref={emblaRef}>
+        <Box className={styles.emblaContainer}>
           {items.map(({ src, title, imageName }) => (
-            <div className={styles.embla__slide} key={imageName}>
+            <Box className={styles.emblaSlide} key={imageName}>
               <Image
                 src={src}
-                className={styles.embla__slide__img}
+                className={styles.emblaSlideImg}
                 fill
                 alt={title || 'Image coming soon'}
-                placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+                placeholder={`data:image/svg+xml;base64,${toBase64(
+                  renderToString(<Shimmer width={700} height={475} />)
+                )}`}
               />
-            </div>
+            </Box>
           ))}
-        </div>
-      </div>
+        </Box>
+      </Box>
       <ArrowBackIco
         color={'action'}
-        className={`${styles.embla__nav} ${styles.embla__prev}`}
+        className={`${styles.emblaNav} ${styles.emblaPrev}`}
         onClick={() => scrollTo('prev')}
       />
       <ArrowForwardIco
         color={'action'}
-        className={`${styles.embla__nav} ${styles.embla__next}`}
+        className={`${styles.emblaNav} ${styles.emblaNext}`}
         onClick={() => scrollTo('next')}
       />
-    </div>
+    </Box>
   );
 };

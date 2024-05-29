@@ -1,31 +1,31 @@
-.banner-image {
+.bannerImage {
     opacity: 1;
     object-fit: cover;
     filter: blur(7px);
     transition: 1000ms all ease;
 }
 
-.banner-image.transition1 {
+.bannerImage.transition1 {
     filter: blur(10px);
     opacity: 70%;
 }
 
-.banner-image.transition2 {
+.bannerImage.transition2 {
     filter: blur(12px);
     opacity: 50%;
 }
 
-.banner-image.transition3 {
+.bannerImage.transition3 {
     opacity: 0;
 }
 
-.image-banner-container {
+.imageBannerContainer {
     position: sticky;
     top: 64px;
     overflow: hidden;
 }
 
-.image-banner-container::after {
+.imageBannerContainer::after {
     content: '';
     position: absolute;
     top: 0;
@@ -38,13 +38,13 @@
 }
 
 @media only screen and (max-width: 899px) {
-    .image-banner-container, .image-banner-container::after {
+    .imageBannerContainer, .imageBannerContainer::after {
         height: 20vh;
     }
 }
 
 @media only screen and (min-width: 900px) {
-    .image-banner-container, .image-banner-container::after {
+    .imageBannerContainer, .imageBannerContainer::after {
         height: 30vh;
     }
 }

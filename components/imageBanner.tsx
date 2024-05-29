@@ -15,7 +15,7 @@ export function ImageBanner() {
 
   const handleScroll = () => {
     const imageList = document.querySelectorAll('#image-list-container');
-    const bannerImage = document.querySelectorAll('.banner-image');
+    const bannerImage = document.querySelectorAll('.bannerImage');
 
     const elementTop = imageList[0]?.getBoundingClientRect()?.top;
 
@@ -43,8 +43,8 @@ export function ImageBanner() {
   };
 
   return (
-    <Box className="image-banner-container">
-      <Image src="/banner.webp" fill alt="banner-image" className="banner-image" priority quality="0" />
+    <Box className="imageBannerContainer">
+      <Image src="/banner.webp" fill alt="banner-image" className="bannerImage" priority quality="0" />
     </Box>
   );
 }

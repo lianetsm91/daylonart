@@ -7,12 +7,12 @@
     position: relative;
 }
 
-.embla__viewport {
+.emblaViewport {
     overflow: hidden;
     height: 100%;
 }
 
-.embla__container {
+.emblaContainer {
     backface-visibility: hidden;
     display: flex;
     touch-action: pan-y;
@@ -20,7 +20,7 @@
     height: 100%;
 }
 
-.embla__slide {
+.emblaSlide {
     flex: 0 0 var(--slide-size);
     justify-content: center;
     min-width: 0;
@@ -29,13 +29,13 @@
     display: flex;
 }
 
-.embla__slide__img {
+.emblaSlideImg {
     display: block;
     height: var(--slide-height);
     object-fit: contain;
 }
 
-.embla__nav {
+.emblaNav {
     touch-action: manipulation;
     position: absolute;
     z-index: 1;
@@ -48,11 +48,11 @@
     border-radius: 2px;
 }
 
-.embla__prev {
+.emblaPrev {
     left: 1rem;
 }
 
-.embla__next {
+.emblaNext {
     right: 1rem;
 }
 

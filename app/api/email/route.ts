@@ -12,7 +12,7 @@ const smtpOptions = {
   secure: true
 };
 
-export async function POST(req: NextRequest) {
+export const POST = async (req: NextRequest) => {
   const transporter = nodemailer.createTransport({
     ...smtpOptions
   });
@@ -30,7 +30,6 @@ export async function POST(req: NextRequest) {
     });
     return NextResponse.json({ message: 'Email sent!' }, { status: 200 });
   } catch (error) {
-    console.error(error);
     return NextResponse.json({ error: 'Error: ' + error }, { status: 500 });
   }
-}
+};

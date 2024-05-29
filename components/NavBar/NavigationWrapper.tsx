@@ -5,7 +5,7 @@ import { MenuIco } from '@icons/MenuIco';
 import { Stack } from '@ui/Stack';
 import { SwipeableDrawer } from '@ui/SwipeableDrawer';
 
-export function NavigationWrapper({ children }: PropsWithChildren) {
+export const NavigationWrapper = ({ children }: PropsWithChildren) => {
   const [anchorElNav, setAnchorElNav] = useState<null | SVGSVGElement>(null);
 
   const handleOpenNavMenu = useCallback((event: MouseEvent<SVGSVGElement>) => {
@@ -32,4 +32,4 @@ export function NavigationWrapper({ children }: PropsWithChildren) {
       </SwipeableDrawer>
     </>
   );
-}
+};

@@ -9,12 +9,10 @@ type LinkButtonProps = {
 
 const SX: SxProps = { m: '.5rem 0' };
 
-export function LinkButton({ href, label }: LinkButtonProps) {
-  return (
-    <Link href={href}>
-      <Button variant="text" color="inherit" sx={SX}>
-        {label}
-      </Button>
-    </Link>
-  );
-}
+export const LinkButton = ({ href, label }: LinkButtonProps) => (
+  <Link href={href}>
+    <Button variant="text" color="inherit" sx={SX}>
+      {label}
+    </Button>
+  </Link>
+);

@@ -4,7 +4,7 @@ import { Box } from '@ui/Box';
 import styles from './footer.module.css';
 import { useTheme } from '@mui/system';
 
-export function FooterWrapper({ children }: PropsWithChildren) {
+export const FooterWrapper = ({ children }: PropsWithChildren) => {
   const theme = useTheme();
 
   return (
@@ -12,4 +12,4 @@ export function FooterWrapper({ children }: PropsWithChildren) {
       {children}
     </Box>
   );
-}
+};

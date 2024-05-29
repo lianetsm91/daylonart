@@ -7,10 +7,8 @@ import { SxProps } from '@mui/system';
 
 const SX = { '--color': DARK_THEME.palette.primary.main } as SxProps;
 
-export function MainWrapper({ children }: PropsWithChildren) {
-  return (
-    <Box className={styles.layoutBody} sx={SX}>
-      {children}
-    </Box>
-  );
-}
+export const MainWrapper = ({ children }: PropsWithChildren) => (
+  <Box className={styles.layoutBody} sx={SX}>
+    {children}
+  </Box>
+);

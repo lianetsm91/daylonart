@@ -1,5 +1,5 @@
 'use client';
-import { useState, forwardRef } from 'react';
+import { forwardRef, useState } from 'react';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { invalidEmail, maxLength, noSpecialCharacters } from '@/utils/formValidations';
@@ -9,9 +9,9 @@ import { TextField } from '@ui/TextField';
 import { SendIco } from '@icons/SendIco';
 import { Snackbar } from '@ui/Snackbar';
 
-const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => (
+  <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
+));
 
 export const ContactMeForm = () => {
   const [disableButton, setDisableButton] = useState(true);
@@ -65,7 +65,6 @@ export const ContactMeForm = () => {
     if (errorFlag) {
       setFormValues(tempFormValues);
     } else {
-      console.log('sendding');
       setSending(true);
       fetch('/api/email', {
         method: 'POST',

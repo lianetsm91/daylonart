@@ -11,14 +11,12 @@ const SX: SxProps = {
   textAlign: 'center'
 };
 
-export function NavigationName() {
-  return (
-    <Typography sx={SX}>
-      <Link href="/">
-        DAYLON
-        <br />
-        ART
-      </Link>
-    </Typography>
-  );
-}
+export const NavigationName = () => (
+  <Typography sx={SX}>
+    <Link href="/">
+      DAYLON
+      <br />
+      ART
+    </Link>
+  </Typography>
+);

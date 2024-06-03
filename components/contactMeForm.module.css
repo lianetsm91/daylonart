@@ -6,6 +6,6 @@
     width: 100%
 }
 
-.formField input:-internal-autofill-selected {
+.contactMeForm input:autofill {
     box-shadow: 0 0 0 100px var(--boxShadowColor) inset !important;
 }

@@ -140,10 +140,12 @@ export const ContactMeForm = () => {
       sx={{
         '& .MuiTextField-root': { my: 2 },
         '& .Mui-focused': { color: 'white !important' },
-        width: { xs: '100%', md: '60%' }
+        width: { xs: '100%', md: '60%' },
+        '--boxShadowColor': theme.palette.primary.light
       }}
       noValidate
       autoComplete="off"
+      className={styles.contactMeForm}
       onSubmit={e => handleSubmit(e)}
     >
       <TextField
@@ -168,8 +170,6 @@ export const ContactMeForm = () => {
         type="email"
         onChange={e => onChange(e, 'email')}
         onBlur={() => onBlur('email')}
-        className={styles.formField}
-        sx={{ '--boxShadowColor': theme.palette.primary.light }}
       />
       <TextField
         label="What are you interested in?"

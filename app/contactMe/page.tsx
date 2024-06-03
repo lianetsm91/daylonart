@@ -19,7 +19,7 @@ const ContactMe = () => (
         sx={{
           '--flexDirection': { xs: 'row', md: 'column' },
           '--justifyContent': { xs: 'center', md: 'space-between' },
-          '--py': { xs: 4, md: 2 },
+          '--py': { xs: '4rem', md: '2rem' },
           '--width': { xs: '100%', md: '40%' }
         }}
       >

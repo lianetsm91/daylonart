@@ -24,8 +24,8 @@ export const imagesBase: TImageBase = {
   a3: {
     title: 'Riña entre pétalos',
     dimensions: {
-      width: 'cm',
-      height: 'cm'
+      width: '',
+      height: ''
     },
     eager: true,
     technic: 'Oleo over canvas',
@@ -82,8 +82,8 @@ export const imagesBase: TImageBase = {
   a9: {
     title: 'Banco de la costumbre',
     dimensions: {
-      width: ' cm',
-      height: ' cm'
+      width: '',
+      height: ''
     },
     technic: 'Oleo over canvas',
     sold: false
@@ -91,8 +91,8 @@ export const imagesBase: TImageBase = {
   b10: {
     title: 'Gratitud',
     dimensions: {
-      width: ' cm',
-      height: ' cm'
+      width: '',
+      height: ''
     },
     technic: 'Oleo over canvas',
     sold: false
@@ -244,8 +244,8 @@ export const imagesBase: TImageBase = {
   c27: {
     title: 'Vista gorda',
     dimensions: {
-      width: 'cm',
-      height: 'cm'
+      width: '',
+      height: ''
     },
     technic: 'Oleo over canvas',
     sold: false
@@ -253,8 +253,8 @@ export const imagesBase: TImageBase = {
   c28: {
     title: 'Time with myself',
     dimensions: {
-      width: 'cm',
-      height: 'cm'
+      width: '',
+      height: ''
     },
     technic: 'Oleo over canvas',
     sold: false
@@ -262,8 +262,8 @@ export const imagesBase: TImageBase = {
   c29: {
     title: '',
     dimensions: {
-      width: 'cm',
-      height: 'cm'
+      width: '',
+      height: ''
     },
     technic: 'Oleo over canvas',
     sold: false

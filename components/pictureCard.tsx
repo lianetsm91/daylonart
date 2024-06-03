@@ -34,12 +34,32 @@ export const PictureCard = ({
   blurUrl,
   index,
   handleOpenImage
-}: Props) => {
-  const subtitle = (
-    <Box className={styles.pictureCardSubtitleContainer}>
+}: Props) => (
+  <Stack
+    key={imageName}
+    onClick={() => handleOpenImage({ open: true, index, title })}
+    className={styles.pictureCardImageListItem}
+    height={`${height}px`}
+    width="100%"
+    sx={IMAGE_CONTAINER_SX}
+  >
+    <Image
+      src={`${src}`}
+      alt={title}
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      height={height}
+      width={width}
+      loading={eager ? 'eager' : 'lazy'}
+      placeholder="blur"
+      blurDataURL={blurUrl}
+    />
+    <Box className={styles.pictureCardFooter}>
       <Box className={styles.pictureCardSubtitleLeft}>
-        <Typography variant={'subtitle1'}>Dimensions: {`${dimensions.width} x ${dimensions.height}`}</Typography>
-        <Typography variant={'subtitle1'}>Technic: {technic}</Typography>
+        <Typography variant={'subtitle1'}>{title || 'NT'}</Typography>
+        {dimensions.width && dimensions.height && (
+          <Typography variant={'subtitle1'}>Dimensions: {`${dimensions.width} x ${dimensions.height}`}</Typography>
+        )}
+        {technic && <Typography variant={'subtitle1'}>Technic: {technic}</Typography>}
       </Box>
       {sold && (
         <Tooltip title="Sold" placement="top">
@@ -47,31 +67,5 @@ export const PictureCard = ({
         </Tooltip>
       )}
     </Box>
-  );
-
-  return (
-    <Stack
-      key={imageName}
-      onClick={() => handleOpenImage({ open: true, index, title })}
-      className={styles.pictureCardImageListItem}
-      height={`${height}px`}
-      width="100%"
-      sx={IMAGE_CONTAINER_SX}
-    >
-      <Image
-        src={`${src}`}
-        alt={title}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        height={height}
-        width={width}
-        loading={eager ? 'eager' : 'lazy'}
-        placeholder="blur"
-        blurDataURL={blurUrl}
-      />
-      <Box className={styles.pictureCardFooter}>
-        <Typography variant={'subtitle1'}>{title}</Typography>
-        {subtitle}
-      </Box>
-    </Stack>
-  );
-};
+  </Stack>
+);

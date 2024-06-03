@@ -26,7 +26,7 @@ export const ContactMeForm = () => {
     e.preventDefault();
     if (sending) return;
 
-    //todo use hook useFormControl https://mui.com/material-ui/react-text-field/
+    //todo check hook useFormControl https://mui.com/material-ui/react-text-field/
     let nameErrors = `${noSpecialCharacters(formValues.get('name')?.value)} ${maxLength(
       formValues.get('name')?.value,
       50
@@ -133,7 +133,23 @@ export const ContactMeForm = () => {
     setSnackBar({ open: false, severity: '', message: '' });
   };
 
-  //todo create a component text field to avoid repetition of code
+  const customTextField = (label: string, name: string, type = 'text', multiline = false, rows = 1) => (
+    <TextField
+      label={label}
+      value={formValues.get(name)?.value || ''}
+      fullWidth
+      required
+      error={formValues.get(name)?.error === true}
+      helperText={formValues.get(name)?.helperText || ''}
+      variant="filled"
+      onChange={e => onChange(e, name)}
+      onBlur={() => onBlur(name)}
+      type={type}
+      multiline={multiline}
+      rows={rows}
+    />
+  );
+
   return (
     <Box
       component="form"
@@ -148,42 +164,9 @@ export const ContactMeForm = () => {
       className={styles.contactMeForm}
       onSubmit={e => handleSubmit(e)}
     >
-      <TextField
-        label="Name"
-        value={formValues.get('name')?.value || ''}
-        fullWidth
-        required
-        error={formValues.get('name')?.error === true}
-        helperText={formValues.get('name')?.helperText || ''}
-        variant="filled"
-        onChange={e => onChange(e, 'name')}
-        onBlur={() => onBlur('name')}
-      />
-      <TextField
-        label="Email"
-        value={formValues.get('email')?.value || ''}
-        fullWidth
-        required
-        error={formValues.get('email')?.error === true}
-        helperText={formValues.get('email')?.helperText || ''}
-        variant="filled"
-        type="email"
-        onChange={e => onChange(e, 'email')}
-        onBlur={() => onBlur('email')}
-      />
-      <TextField
-        label="What are you interested in?"
-        value={formValues.get('message')?.value || ''}
-        fullWidth
-        required
-        error={formValues.get('message')?.error === true}
-        helperText={formValues.get('message')?.helperText || ''}
-        variant="filled"
-        multiline
-        rows={8}
-        onChange={e => onChange(e, 'message')}
-        onBlur={() => onBlur('message')}
-      />
+      {customTextField('Name', 'name')}
+      {customTextField('Email', 'email', 'email')}
+      {customTextField('What are you interested in?', 'message', 'text', true, 8)}
       <LoadingButton
         className={styles.contactMeFormLoadingButton}
         variant="contained"
